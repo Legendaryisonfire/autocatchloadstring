@@ -1,0 +1,21 @@
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Auto Catch";
+    Text = "Press L to turn off and on. C To Auto Catch";
+})
+
+local UIS = game:GetService("UserInputService")
+local bool = true
+
+
+UIS.InputBegan:Connect(function(inp, gpe)
+    if gpe then return end
+
+    if inp.KeyCode == Enum.KeyCode.L then 
+        bool = not bool
+        print("looping ended")
+    end
+end)
+
+while wait() do
+	if bool then
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/Legendaryisonfire/autocatch/main/FFHUB%20Auto%20Catch',true))()
